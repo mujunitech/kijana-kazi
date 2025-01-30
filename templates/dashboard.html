@@ -1,1 +1,18 @@
-
+{% extends "base.html" %}
+{% block content %}
+<h2>Welcome {{ user.name }} from {{ user.location }}</h2>
+<div class="row">
+    <div class="col-md-8">
+        <h3>Local Challenges</h3>
+        {% for challenge in challenges %}
+        <div class="card mb-3">
+            <div class="card-body">
+                <h5>{{ challenge.title }}</h5>
+                <p>{{ challenge.description }}</p>
+                <small>Upvotes: {{ challenge.upvotes }}</small>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
